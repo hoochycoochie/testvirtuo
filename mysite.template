@@ -1,0 +1,23 @@
+server{
+
+   
+    location /images {
+        alias /images/;
+        gzip_static on;
+        expires max;
+        add_header Cache-Control private;
+    }
+
+
+    
+     location /graphql{
+        proxy_pass http://web:3001;
+          
+    }
+
+
+    
+
+
+   
+}
